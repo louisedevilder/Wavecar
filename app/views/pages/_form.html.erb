@@ -1,0 +1,23 @@
+<div class="container">
+  <%= simple_form_for :wave, url: waves_index_path, method: :get do |f| %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-4">
+        <%= f.input :departure_address, placeholder: "Departure", label: false %>
+      </div>
+
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-4">
+        <%= f.input :arrival_address, placeholder: "Arrival", label: false %>
+      </div>
+
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-4">
+        <%= f.input :date, as: :string, placeholder: "Pick a date", label: false %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <%= f.button :submit, "Search a wave", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

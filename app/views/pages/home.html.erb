@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg,rgba(162, 160, 160, 0.6) 0%, rgba(0, 0, 0, 0.38) 48%), url(<%= asset_path 'background.jpg' %>);">
+  <div class="banner-content">
+    <h1>Find a way to go surfing</h1>
+    <p>We leave to surf come with us !</p>
+    <%= render 'form' %>
+  </div>
+</div>
