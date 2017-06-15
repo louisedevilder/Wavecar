@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615101941) do
+ActiveRecord::Schema.define(version: 20170615103358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "car_id"
+    t.bigint "rider_id"
+    t.bigint "cowave_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_bookings_on_car_id"
+    t.index ["cowave_id"], name: "index_bookings_on_cowave_id"
+    t.index ["rider_id"], name: "index_bookings_on_rider_id"
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.bigint "cowave_id"
+    t.integer "place"
+    t.string "type"
+    t.string "brand"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cowave_id"], name: "index_cars_on_cowave_id"
+  end
+
+  create_table "cowaves", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "riders", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +67,21 @@ ActiveRecord::Schema.define(version: 20170615101941) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "waves", force: :cascade do |t|
+    t.bigint "car_id"
+    t.date "date"
+    t.time "departure_time"
+    t.string "departure_address"
+    t.string "arrival_address"
+    t.string "sport_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_waves_on_car_id"
+  end
+
+  add_foreign_key "bookings", "cars"
+  add_foreign_key "bookings", "cowaves", column: "cowave_id"
+  add_foreign_key "bookings", "riders"
+  add_foreign_key "cars", "cowaves", column: "cowave_id"
+  add_foreign_key "waves", "cars"
 end
