@@ -1,0 +1,2 @@
+class Cowave < ApplicationRecord
+end
