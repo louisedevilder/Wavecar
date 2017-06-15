@@ -1,0 +1,2 @@
+class CowavesController < ApplicationController
+end
