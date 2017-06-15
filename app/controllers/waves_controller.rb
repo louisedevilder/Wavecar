@@ -1,6 +1,7 @@
 class WavesController < ApplicationController
 
   def index
+    @waves = Wave.all
   end
 
   def create
