@@ -2,15 +2,15 @@
   <%= simple_form_for :wave, url: waves_index_path, method: :get do |f| %>
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-4">
-        <%= f.input :departure_address, placeholder: "Departure", label: false %>
+        <%= f.input :departure_address, placeholder: "Where are you ?", label: false %>
       </div>
 
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-4">
-        <%= f.input :arrival_address, placeholder: "Arrival", label: false %>
+        <%= f.input :arrival_address, placeholder: "Which spot ?", label: false %>
       </div>
 
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-4">
-        <%= f.input :date, as: :string, placeholder: "Pick a date", label: false %>
+        <%= f.input :date, as: :string, placeholder: "When ? Time ?", label: false, class: "datetimepicker12" %>
       </div>
     </div>
 
@@ -21,3 +21,5 @@
     </div>
   <% end %>
 </div>
+
+
