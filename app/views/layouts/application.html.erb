@@ -10,8 +10,10 @@
   </head>
   <body>
     <%= appropriate_navbar %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
+     <div class="page-wrapper <%= navbar_margin %>">
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+     </div>
+      <%= javascript_include_tag 'application' %>
   </body>
 </html>
