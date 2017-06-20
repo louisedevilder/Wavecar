@@ -1,6 +1,3 @@
 $(function () {
-  $('.datetimepicker12').datetimepicker({
-      inline: true,
-      sideBySide: true
-  });
+  $('#datetimepicker4').datetimepicker();
 });
