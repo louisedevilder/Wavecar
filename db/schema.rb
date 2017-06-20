@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615103358) do
+ActiveRecord::Schema.define(version: 20170620144904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20170615103358) do
   create_table "cars", force: :cascade do |t|
     t.bigint "cowave_id"
     t.integer "place"
-    t.string "type"
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,8 +79,8 @@ ActiveRecord::Schema.define(version: 20170615103358) do
   end
 
   add_foreign_key "bookings", "cars"
-  add_foreign_key "bookings", "cowaves", column: "cowave_id"
+  add_foreign_key "bookings", "cowaves"
   add_foreign_key "bookings", "riders"
-  add_foreign_key "cars", "cowaves", column: "cowave_id"
+  add_foreign_key "cars", "cowaves"
   add_foreign_key "waves", "cars"
 end
