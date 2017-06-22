@@ -21,6 +21,5 @@ class RidersController < ApplicationController
   def rider_params
     params.require(:rider).permit(:name, :description)
   end
-end
 
 end
