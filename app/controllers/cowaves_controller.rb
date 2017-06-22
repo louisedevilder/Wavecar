@@ -1,5 +1,5 @@
 class CowavesController < ApplicationController
-    before_action :set_cowave, only: [:show :update]
+    before_action :set_cowave, only: [:show, :update]
 
 
   def index
