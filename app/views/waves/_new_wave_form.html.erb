@@ -1,0 +1,38 @@
+<%= simple_form_for :wave, url: new_wave_path, method: :get do |f| %>
+  <div class="row">
+   <div class="col-sm-8 col-sm-offset-2">
+      <%= f.input :departure_address, placeholder: "Depature place", label: false %>
+    </div>
+
+    <div class="col-sm-8 col-sm-offset-2">
+      <%= f.input :arrival_address, placeholder: "Spot", label: false %>
+    </div>
+
+   <div class="col-sm-8 col-sm-offset-2 input-append date">
+      <%= f.input :date, placeholder: "Date and time", label: false, input_html: {id: "datetimepicker"} %>
+    </div>
+
+    <div class="col-sm-8 col-sm-offset-2">
+      <%= f.input :sport_type, placeholder: "Kitesurf ? Surf ? Wake ?", label: false %>
+    </div>
+  </div>
+    <br>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <%= f.button :submit, "Create your wave", class: "btn btn-blue" %>
+    </div>
+  </div>
+<% end %>
+
+
+<%= content_for :after_js do %>
+<script type="text/javascript">
+$( document ).ready(function() {
+    $('#datetimepicker').datetimepicker();
+});
+</script>
+<% end %>
+
+
+
+
