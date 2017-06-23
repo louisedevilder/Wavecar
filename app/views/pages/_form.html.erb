@@ -2,15 +2,15 @@
   <%= simple_form_for :wave, url: waves_path, method: :get do |f| %>
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-4">
-        <%= f.input :departure_address, placeholder: "Where are you ?", label: false %>
+        <%= f.input :departure_address, placeholder: "Where you are", label: false %>
       </div>
 
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-4">
-        <%= f.input :arrival_address, placeholder: "Which spot ?", label: false %>
+        <%= f.input :sport_type, placeholder: "Your sport (kitesurf, surf, wake)", label: false %>
       </div>
 
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-offset-0 col-md-4 input-append date">
-        <%= f.input :date, input_html: {id: "datetimepicker"}, placeholder: "When ? Time ?", label: false %>
+        <%= f.input :date, input_html: {id: "datetimepicker"}, placeholder: "Date and time", label: false %>
       </div>
     </div>
 
