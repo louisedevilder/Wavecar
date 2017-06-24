@@ -95,51 +95,39 @@ puts "... Cars seed done"
 puts "... Creating Waves"
 waves = [
   {
-    date: Date.today + 1,
-    departure_time: Time.now,
+    datetime: Time.now + rand(0..10).days,
     departure_address: "103 cours Balguerie Stuttenberg 33000 Bordeaux",
-    arrival_address: "La Hume",
-    sport_type: "kitesurf"
+    arrival_address: "La Hume"
   },
 
   {
-    date: Date.today + 1,
-    departure_time: Time.now,
+    datetime: Time.now + rand(0..10).days,
     departure_address: "74 quai des Chartrons 33000 Bordeaux",
-    arrival_address: "Lacanau sud",
-    sport_type: "surf"
+    arrival_address: "Lacanau sud"
   },
 
   {
-    date: Date.today + 1,
-    departure_time: Time.now,
+    datetime: Time.now + rand(0..10).days,
     departure_address: "37 rue des Étuves 33000 Bordeaux",
-    arrival_address: "Biarritz",
-    sport_type: "surf"
+    arrival_address: "Biarritz"
   },
 
   {
-    date: Date.today + 1,
-    departure_time: Time.now,
+    datetime: Time.now + rand(0..10).days,
     departure_address: "3 place de la bourse 33000 Bordeaux",
-    arrival_address: "Hourtin",
-    sport_type: "kitesurf"
+    arrival_address: "Hourtin"
   },
 
   {
-    date: Date.today + 1,
-    departure_time: Time.now,
+    datetime: Time.now + rand(0..10).days,
     departure_address: "11 cours Victor Hugo 33000 Bordeaux",
-    arrival_address: "Lachanau",
-    sport_type: "kitesurf"
+    arrival_address: "Lachanau"
   },
 
   {
-    date: Date.today + 1,
-    departure_time: Time.now,
+    datetime: Time.now + rand(0..10).days,
     departure_address: "33 cours du Médoc 33000 Bordeaux",
-    arrival_address: "Baurech",
-    sport_type: "wake"
+    arrival_address: "Baurech"
   }
 ]
 
@@ -150,3 +138,26 @@ waves.each do |wave|
   print "."
 end
 puts "... Waves seed done"
+
+puts "... Creating Sports"
+
+sports =
+[
+  {
+    name: "Kitesurf"
+  },
+  {
+    name: "Surf"
+  },
+  {
+    name: "Wake"
+  }
+]
+
+sports.each do |sport_name|
+  genre = Sport.new(name: sport_name)
+  genre.save!
+  print "... Sports seed done"
+end
+
+puts "done"
