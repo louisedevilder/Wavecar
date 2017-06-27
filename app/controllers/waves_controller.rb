@@ -1,14 +1,13 @@
 class WavesController < ApplicationController
 
   def index
-    if session[:datetime] = params[:wave][:datetime]
-      @waves = Wave.near(params[:wave][:departure_address], 10)
+    if params[:search].present?
+    @waves = Wave.near(params[:wave][:departure_address], 10)
                    .where('waves.sport = ?', params[:wave][:sport])
-                   # .select(session[:datetime])
+    @sports = Sport.pluck(:name).uniq
     else
       @waves = Wave.all
     end
-    @sports = Sport.pluck(:name).uniq
   end
 
   def new

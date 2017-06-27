@@ -5,4 +5,6 @@ class Wave < ApplicationRecord
   validates :departure_address, presence: true
   validates :arrival_address, presence: true
   validates :sport, presence: true
+  geocoded_by :departure_address
+  after_validation :geocode
 end

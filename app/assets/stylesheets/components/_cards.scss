@@ -1,0 +1,61 @@
+.wave-card {
+  height: 250px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin-bottom: 30px;
+}
+.wave-card-sport {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.wave-card-spot {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 105px;
+  font-size: 10px;
+  text-transform: uppercase;
+  h2 {
+    font-size: 24px;
+  }
+}
+
+.wave-card-datetime {
+  text-align: center;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  line-height: 10px;
+}
+.wave-card-departure {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+.wave-card-departure h2 {
+  font-size: 24px;
+}
+.wave-card-departure p {
+  font-size: 13px;
+}
+
+.wave-card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+
+.wave-card-link:hover {
+  opacity: 0.1;
+}
