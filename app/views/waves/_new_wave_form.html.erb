@@ -9,17 +9,17 @@
     </div>
 
    <div class="col-sm-8 col-sm-offset-2 input-append date">
-      <%= f.input :date, placeholder: "Date and time", label: false, input_html: {id: "datetimepicker"} %>
+      <%= f.input :datetime, placeholder: "Date and time", label: false, input_html: {id: "datetimepicker"} %>
     </div>
 
     <div class="col-sm-8 col-sm-offset-2">
-      <%= f.input :sport_type, placeholder: "Kitesurf ? Surf ? Wake ?", label: false %>
+      <%= f.input :sport, collection: @sports, prompt: "Choose your sport", label: false %>
     </div>
   </div>
-    <br>
+
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <%= f.button :submit, "Create your wave", class: "btn btn-blue" %>
+     <%= f.button :submit, "Create your wave", class: "btn btn-blue" %>
     </div>
   </div>
 <% end %>

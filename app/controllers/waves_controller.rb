@@ -13,7 +13,8 @@ class WavesController < ApplicationController
 
   def new
     @wave = Wave.new
-    @sport = Sport.all.order[:name]
+    @sport = Sport.all.order(:name)
+    @sports = Sport.pluck(:name).uniq
   end
 
   def create
@@ -41,4 +42,5 @@ class WavesController < ApplicationController
   def wave_params
     params.require(:wave).permit(:car_id, :sport_id, :datetime, :departure_time, :departure_address, :arrival_address)
   end
+
 end
