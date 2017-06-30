@@ -1,1 +1,21 @@
-<h2>Waves#Show</h2>
+<%= render 'wave_banner' %>
+<div class="wave-wrapper">
+  <div class="container text-center">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1><%= @wave.arrival_address %></h1>
+          <h2><%= @wave.sport.name %></h2>
+          <h3><%= @wave.departure_address %></h3>
+          <h4><%= @wave.datetime.strftime('%A %d %B %Y') %></h4>
+          <h4><%= @wave.datetime.strftime('%H:%M') %></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <%= link_to booking_path do  %>
+          <button type="button" class="btn btn-success">Book now</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

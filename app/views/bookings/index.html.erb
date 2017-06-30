@@ -1,1 +1,25 @@
-<h2>Bookings#Index</h2>
+<%= render 'shared/back_link' %>
+
+<div class="wrapper">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-xs-12">
+      <% if @booking.nil? %>
+        <p>You don't have any booking yet</p>
+        <%= link_to root_path do %>
+          <button type="button" class="btn btn-success">Search a wave</button>
+        <% end %>
+        <% else %>
+          <% @bookings.each do |booking| %>
+            <%= booking.car.cowave.name %>
+            <%= booking.car.brand %>
+            <%= booking.wave.sport %>
+            <%= booking.wave.arrival_address %>
+            <%= booking.wave.departure_address %>
+            <%= booking.wave.datetime %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
+

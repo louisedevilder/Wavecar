@@ -1,4 +1,5 @@
 class WavesController < ApplicationController
+  before_action :set_wave, only: [:show]
 
   def index
     if params[:search].present?
@@ -38,6 +39,6 @@ class WavesController < ApplicationController
   end
 
   def wave_params
-    params.require(:wave).permit(:car_id, :sport_id, :date, :departure_time, :departure_address, :arrival_address)
+    params.require(:wave).permit(:car_id, :sport_id, :datetime, :departure_time, :departure_address, :arrival_address)
   end
 end
