@@ -87,7 +87,7 @@ cars =[
 
 cars.each do |car|
   new_car = Car.new(car)
-  new_car.cowave = Cowave.all.order('RANDOM()').first
+  new_car.cowave = Cowave.all.order("RANDOM()").first
   new_car.save!
   print "."
 end
@@ -165,7 +165,7 @@ waves = [
 
 waves.each do |wave|
   new_wave = Wave.new(wave)
-  new_wave.car = Car.all.order('RANDOM()').first
+  new_wave.car = Car.all.order("RANDOM()").first
   new_wave.save!
   print "."
 end
