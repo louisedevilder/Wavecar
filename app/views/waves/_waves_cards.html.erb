@@ -6,7 +6,7 @@
             <%= link_to wave_path(wave) do %>
               <div class="wave-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= asset_path 'surf.jpg' %>');">
                 <div class="wave-card-spot">
-                  <h2><%= wave.arrival_address %></h2>
+                  <h1><%= wave.arrival_address %></h1>
                 </div>
                 <div class="wave-card-sport">
                   <h4><%= wave.sport.name %></h4>

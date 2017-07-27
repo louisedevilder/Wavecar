@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @sports = Sport.all
+    @last_waves = Wave.last(6)
   end
 end

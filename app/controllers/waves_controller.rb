@@ -3,9 +3,9 @@ class WavesController < ApplicationController
 
   def index
     if params[:search].present?
-    @waves = Wave.near(params[:wave][:departure_address], 10)
-                   .where('waves.sport = ?', params[:wave][:sport])
-    @sports = Sport.pluck(:name).uniq
+      @waves = Wave.near(params[:wave][:departure_address], 10)
+                     .where('waves.sport = ?', params[:wave][:sport])
+      @sports = Sport.pluck(:name).uniq
     else
       @waves = Wave.all
     end

@@ -6,8 +6,22 @@
   </div>
 </div>
 
-<div class="description">
-  <%= render 'pages/description' %>
+<div class="container text-center">
+  <div class="description">
+    <%= render 'pages/description' %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="last-waves">
+    <div class="row">
+      <div class="col-xs-12">
+         <h2>Last Waves</h2>
+         <hr>
+      </div>
+    </div>
+    <%= render 'pages/last_waves' %>
+  </div>
 </div>
 
 <%= content_for :after_js do %>
